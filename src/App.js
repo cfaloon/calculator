@@ -21,6 +21,11 @@ class App extends Component {
         <Display inputValue={displayVal} />
         <div className="buttons">
           { buttonArray }
+          <button>+</button>
+          <button>-</button>
+          <button>/</button>
+          <button>*</button>
+
         </div>
       </div>
     );
