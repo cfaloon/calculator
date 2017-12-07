@@ -1,0 +1,9 @@
+input {
+	font-family: 'Calc';
+	font-size: 1.4em;
+}
+
+@font-face {
+font-family: 'calc';
+src: url('calc-font.ttf');
+}
