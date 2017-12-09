@@ -1,0 +1,20 @@
+button {
+  height: 30px;
+  width: 30px;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 1px;
+  border-color: #EDF2F4;
+}
+
+button:focus{
+  outline: none;
+}
+
+.Button-numeral {
+  background-color: #C10330;
+}
+
+.Button-operator {
+  background-color: #2B2D42;
+}
