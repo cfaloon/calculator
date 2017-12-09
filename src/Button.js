@@ -4,7 +4,7 @@ import './Button.css';
 export default class Button extends Component {
   render () {
     return (
-      <button>{this.props.value}</button>
+      <button className={this.props.className}>{this.props.value}</button>
     )
   }
 }
