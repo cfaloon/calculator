@@ -1,6 +1,7 @@
 input {
 	font-family: 'Calc';
 	font-size: 1.4em;
+	direction: rtl;
 }
 
 @font-face {
