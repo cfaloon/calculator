@@ -18,3 +18,7 @@ button:focus{
 .Button-operator {
   background-color: #2B2D42;
 }
+
+.Button-clear {
+  background-color: #8D99AE;
+}

@@ -27,7 +27,7 @@ class App extends Component {
           <Button value="*" className="Button-operator"/>
           <Button value="/" className="Button-operator"/>
           <Button value="=" className="Button-operator"/>
-
+          <Button value="C" className="Button-clear"/>
 
         </div>
       </div>
