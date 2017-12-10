@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Display from './Display.js';
+import Button from './Button.js';
 
 class App extends Component {
   render() {
     let displayVal = 0;
     let buttonArray = [];
     for(let x=0; x <= 9; x++) {
-      buttonArray.push(<button>{x}</button>);
+      buttonArray.push(<Button value={x} />);
     }
 
 
@@ -21,10 +22,12 @@ class App extends Component {
         <Display inputValue={displayVal} />
         <div className="buttons">
           { buttonArray }
-          <button>+</button>
-          <button>-</button>
-          <button>/</button>
-          <button>*</button>
+          <Button value="+" />
+          <Button value="-" />
+          <Button value="*" />
+          <Button value="/" />
+          <Button value="=" />
+
 
         </div>
       </div>
