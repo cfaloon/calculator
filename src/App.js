@@ -9,7 +9,7 @@ class App extends Component {
     let displayVal = 0;
     let buttonArray = [];
     for(let x=0; x <= 9; x++) {
-      buttonArray.push(<Button value={x} className="Button-numeral" />);
+      buttonArray.push(<Button key={x} value={x} className="Button-numeral" />);
     }
 
 
