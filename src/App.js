@@ -9,7 +9,7 @@ class App extends Component {
     let displayVal = 0;
     let buttonArray = [];
     for(let x=0; x <= 9; x++) {
-      buttonArray.push(<Button value={x} />);
+      buttonArray.push(<Button value={x} className="Button-numeral" />);
     }
 
 
@@ -22,11 +22,11 @@ class App extends Component {
         <Display inputValue={displayVal} />
         <div className="buttons">
           { buttonArray }
-          <Button value="+" />
-          <Button value="-" />
-          <Button value="*" />
-          <Button value="/" />
-          <Button value="=" />
+          <Button value="+" className="Button-operator"/>
+          <Button value="-" className="Button-operator"/>
+          <Button value="*" className="Button-operator"/>
+          <Button value="/" className="Button-operator"/>
+          <Button value="=" className="Button-operator"/>
 
 
         </div>
