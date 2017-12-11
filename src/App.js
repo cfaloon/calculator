@@ -49,7 +49,7 @@ class App extends Component {
           <div className="row">
             <div className="col-md-4">
               <div className="buttons">
-                <Button value="C" className="Button-clear"/>{ buttonArray[0] }<Button value="=" className="Button-clear"/><Button value="/" className="Button-operator"/>
+                <Button value="C" className="Button-clear"/>{ buttonArray[0] }<Button value="=" className="Button-clear"/><Button value="-" className="Button-operator"/>
               </div>
             </div>
           </div>
