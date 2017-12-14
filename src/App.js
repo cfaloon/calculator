@@ -5,11 +5,30 @@ import Display from './Display.js';
 import Button from './Button.js';
 
 class App extends Component {
+
+state = {
+  displayValue: 0,
+  operand: null
+}
+
+handleRecieveInput = (x) => {
+  this.setState({displayValue: x})
+  console.log(x);
+}
+
+handleRecieveOperand = (x) => {
+  if (x === "=") {
+    console.log("run the calc")
+  }
+  else {
+    this.setState({operand: x})
+  }
+}
   render() {
-    let displayVal = 0;
+    // let displayVal = 0;
     let buttonArray = [];
     for(let x=0; x <= 9; x++) {
-      buttonArray.push(<Button key={x} value={x} className="Button-numeral" />);
+      buttonArray.push(<Button key={x} value={x} displayValue={this.state.displayValue} handleRecieveInput={this.handleRecieveInput} className="Button-numeral" />);
     }
 
     return (
@@ -19,7 +38,7 @@ class App extends Component {
           <h1 className="App-title">Calculator</h1>
         </header>
         <div className="Interface">
-          <Display inputValue={displayVal} />
+          <Display inputValue={this.state.displayValue} />
           <div className="button-row">
             { buttonArray[7] }{ buttonArray[8] }{ buttonArray[9] }<Button value="*" className="Button-operator"/>
           </div>
