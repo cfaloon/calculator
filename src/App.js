@@ -19,28 +19,18 @@ class App extends Component {
           <h1 className="App-title">Calculator</h1>
         </header>
         <div className="Interface">
-          <div className="row">
-            <Display inputValue={displayVal} />
+          <Display inputValue={displayVal} />
+          <div className="button-row">
+            { buttonArray[7] }{ buttonArray[8] }{ buttonArray[9] }<Button value="*" className="Button-operator"/>
           </div>
-          <div className="row">
-            <div className="buttons">
-              { buttonArray[7] }{ buttonArray[8] }{ buttonArray[9] }<Button value="*" className="Button-operator"/>
-            </div>
+          <div className="button-row">
+            { buttonArray[4] }{ buttonArray[5] }{ buttonArray[6] }<Button value="/" className="Button-operator"/>
           </div>
-          <div className="row">
-            <div className="buttons">
-              { buttonArray[4] }{ buttonArray[5] }{ buttonArray[6] }<Button value="/" className="Button-operator"/>
-            </div>
+          <div className="button-row">
+            { buttonArray[1] }{ buttonArray[2] }{ buttonArray[3] }<Button value="+" className="Button-operator"/>
           </div>
-          <div className="row">
-            <div className="buttons">
-              { buttonArray[1] }{ buttonArray[2] }{ buttonArray[3] }<Button value="+" className="Button-operator"/>
-            </div>
-          </div>
-          <div className="row">
-            <div className="buttons">
-              <Button value="C" className="Button-clear"/>{ buttonArray[0] }<Button value="=" className="Button-clear"/><Button value="-" className="Button-operator"/>
-            </div>
+          <div className="button-row">
+            <Button value="C" className="Button-clear"/>{ buttonArray[0] }<Button value="=" className="Button-clear"/><Button value="-" className="Button-operator"/>
           </div>
         </div>
       </div>
