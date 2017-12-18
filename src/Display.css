@@ -1,7 +1,7 @@
 input {
 	font-family: 'Calc';
 	font-size: 1.4em;
-	direction: rtl;
+	text-align: right;
 	width: 160px;
 }
 
