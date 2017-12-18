@@ -5,11 +5,15 @@ export default class Button extends Component {
   handleClick = () => {
     switch (this.props.className) {
       case 'Button-numeral':
-        let display = document.getElementById("display");
-        display.value = display.value * 10 + this.props.value;
+        const updatedValue = this.props.displayValue * 10 + this.props.value;
+        this.props.handleReceiveInput(updatedValue);
+        break;
+      case 'Button-clear':
+        const zeroValue = 0;
+        this.props.handleReceiveInput(zeroValue);
         break;
       default:
-        console.log('other');
+        this.props.handleReceiveOperator(this.props.value);
     }
   }
 
