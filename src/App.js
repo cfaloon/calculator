@@ -8,28 +8,52 @@ class App extends Component {
 
 state = {
   displayValue: 0,
-  operand: null
+  operator: null,
+  firstNum: null
 }
 
-handleRecieveInput = (x) => {
+handleReceiveInput = (x) => {
   this.setState({displayValue: x})
-  console.log(x);
+
 }
 
-handleRecieveOperand = (x) => {
+handleReceiveOperator = (x) => {
   if (x === "=") {
-    console.log("run the calc")
+    let returnVal = null;
+    switch (this.state.operator) {
+      case "+":
+        returnVal = this.state.firstNum + this.state.displayValue;
+        break;
+      case "-":
+        returnVal = this.state.firstNum - this.state.displayValue;
+        break;
+      case "/":
+        returnVal = this.state.firstNum / this.state.displayValue;
+        break;
+      case "*":
+        returnVal = this.state.firstNum * this.state.displayValue;
+        break;
+      default:
+
+    }
+    this.setState({displayValue: returnVal});
   }
   else {
-    this.setState({operand: x})
+    this.setState({
+      operator: x,
+      firstNum: this.state.displayValue,
+      displayValue: 0
+    });
   }
 }
   render() {
     // let displayVal = 0;
     let buttonArray = [];
     for(let x=0; x <= 9; x++) {
-      buttonArray.push(<Button key={x} value={x} displayValue={this.state.displayValue} handleRecieveInput={this.handleRecieveInput} className="Button-numeral" />);
+      buttonArray.push(<Button key={x} value={x} displayValue={this.state.displayValue} handleReceiveInput={this.handleReceiveInput} className="Button-numeral" />);
     }
+
+    const operatorButtonProps = { className: "Button-operator", handleReceiveOperator: this.handleReceiveOperator };
 
     return (
       <div className="App">
@@ -40,16 +64,16 @@ handleRecieveOperand = (x) => {
         <div className="Interface">
           <Display inputValue={this.state.displayValue} />
           <div className="button-row">
-            { buttonArray[7] }{ buttonArray[8] }{ buttonArray[9] }<Button value="*" className="Button-operator"/>
+            { buttonArray[7] }{ buttonArray[8] }{ buttonArray[9] }<Button {...operatorButtonProps} value="*"/>
           </div>
           <div className="button-row">
-            { buttonArray[4] }{ buttonArray[5] }{ buttonArray[6] }<Button value="/" className="Button-operator"/>
+            { buttonArray[4] }{ buttonArray[5] }{ buttonArray[6] }<Button {...operatorButtonProps} value="/"/>
           </div>
           <div className="button-row">
-            { buttonArray[1] }{ buttonArray[2] }{ buttonArray[3] }<Button value="+" className="Button-operator"/>
+            { buttonArray[1] }{ buttonArray[2] }{ buttonArray[3] }<Button {...operatorButtonProps} value="+"/>
           </div>
           <div className="button-row">
-            <Button value="C" className="Button-clear"/>{ buttonArray[0] }<Button value="=" className="Button-clear"/><Button value="-" className="Button-operator"/>
+            <Button value="C" handleReceiveInput={this.handleReceiveInput} className="Button-clear"/>{ buttonArray[0] }<Button {...operatorButtonProps} value="="/><Button {...operatorButtonProps} value="-"/>
           </div>
         </div>
       </div>
