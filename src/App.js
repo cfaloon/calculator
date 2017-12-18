@@ -12,23 +12,26 @@ class App extends Component {
       buttonArray.push(<Button key={x} value={x} className="Button-numeral" />);
     }
 
-
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Calculator</h1>
         </header>
-        <Display inputValue={displayVal} />
-        <div className="buttons">
-          { buttonArray }
-          <Button value="+" className="Button-operator"/>
-          <Button value="-" className="Button-operator"/>
-          <Button value="*" className="Button-operator"/>
-          <Button value="/" className="Button-operator"/>
-          <Button value="=" className="Button-operator"/>
-          <Button value="C" className="Button-clear"/>
-
+        <div className="Interface">
+          <Display inputValue={displayVal} />
+          <div className="button-row">
+            { buttonArray[7] }{ buttonArray[8] }{ buttonArray[9] }<Button value="*" className="Button-operator"/>
+          </div>
+          <div className="button-row">
+            { buttonArray[4] }{ buttonArray[5] }{ buttonArray[6] }<Button value="/" className="Button-operator"/>
+          </div>
+          <div className="button-row">
+            { buttonArray[1] }{ buttonArray[2] }{ buttonArray[3] }<Button value="+" className="Button-operator"/>
+          </div>
+          <div className="button-row">
+            <Button value="C" className="Button-clear"/>{ buttonArray[0] }<Button value="=" className="Button-clear"/><Button value="-" className="Button-operator"/>
+          </div>
         </div>
       </div>
     );
