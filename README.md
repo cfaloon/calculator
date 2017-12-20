@@ -1,5 +1,8 @@
 ## React Calculator
-[@cfaloon](https://github.com/cfaloon) & [@Brandonniles](https://github.com/Brandonniles)
+by [@cfaloon](https://github.com/cfaloon) & [@Brandonniles](https://github.com/Brandonniles)
+
+### Build Status
+[![CircleCI](https://circleci.com/gh/cfaloon/calculator.svg?style=svg)](https://circleci.com/gh/cfaloon/calculator)
 
 ### Introduction and Purpose
 Welcome to our humble Calculator React App.
