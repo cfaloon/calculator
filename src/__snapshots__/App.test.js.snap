@@ -168,7 +168,7 @@ exports[`clears screen 2`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="4"
+      value={4}
     />
     <div
       className="button-row"
@@ -311,7 +311,7 @@ exports[`clears screen 3`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="0"
+      value={0}
     />
     <div
       className="button-row"
@@ -597,7 +597,7 @@ exports[`enters numbers to display 2`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="4"
+      value={4}
     />
     <div
       className="button-row"
@@ -740,7 +740,7 @@ exports[`enters numbers to display 3`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="64"
+      value={46}
     />
     <div
       className="button-row"
@@ -1026,7 +1026,7 @@ exports[`performs addition 2`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="4"
+      value={4}
     />
     <div
       className="button-row"
@@ -1312,7 +1312,7 @@ exports[`performs addition 4`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="7"
+      value={7}
     />
     <div
       className="button-row"
@@ -1455,7 +1455,7 @@ exports[`performs addition 5`] = `
       className="display"
       id="display"
       readOnly={true}
-      value="47"
+      value={11}
     />
     <div
       className="button-row"
