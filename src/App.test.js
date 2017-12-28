@@ -14,10 +14,10 @@ it('enters numbers to display', () => {
   const app = renderer.create(<App />);
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveInput('4');
+  app.getInstance().handleReceiveClick('4');
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveInput('64');
+  app.getInstance().handleReceiveClick('6');
   expect(app.toJSON()).toMatchSnapshot();
 });
 
@@ -25,10 +25,10 @@ it('clears screen', () => {
   const app = renderer.create(<App />);
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveInput('4');
+  app.getInstance().handleReceiveClick('4');
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveInput('0');
+  app.getInstance().handleReceiveClick('C');
   expect(app.toJSON()).toMatchSnapshot();
 });
 
@@ -36,15 +36,15 @@ it('performs addition', () => {
   const app = renderer.create(<App />);
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveInput('4');
+  app.getInstance().handleReceiveClick('4');
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveOperator('+');
+  app.getInstance().handleReceiveClick('+');
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveInput('7');
+  app.getInstance().handleReceiveClick('7');
   expect(app.toJSON()).toMatchSnapshot();
 
-  app.getInstance().handleReceiveOperator('=');
+  app.getInstance().handleReceiveClick('=');
   expect(app.toJSON()).toMatchSnapshot();
 });

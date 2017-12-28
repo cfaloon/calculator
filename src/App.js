@@ -12,9 +12,22 @@ state = {
   firstNum: null
 }
 
-handleReceiveInput = (x) => {
-  this.setState({displayValue: x})
-
+handleReceiveClick = (value) => {
+  switch(value) {
+    case 'C':
+      this.setState({displayValue: 0});
+      break;
+    case '+':
+    case '-':
+    case '/':
+    case '*':
+    case '=':
+      this.handleReceiveOperator(value);
+      break;
+    default:
+      let newValue = Number(value) + (this.state.displayValue * 10);
+      this.setState({displayValue: newValue});
+  }
 }
 
 handleReceiveOperator = (x) => {
@@ -50,10 +63,10 @@ handleReceiveOperator = (x) => {
     // let displayVal = 0;
     let buttonArray = [];
     for(let x=0; x <= 9; x++) {
-      buttonArray.push(<Button key={x} value={x} displayValue={this.state.displayValue} handleReceiveInput={this.handleReceiveInput} className="Button-numeral" />);
+      buttonArray.push(<Button key={x} value={x} displayValue={this.state.displayValue} handleReceiveClick={this.handleReceiveClick} className="Button-numeral" />);
     }
 
-    const operatorButtonProps = { className: "Button-operator", handleReceiveOperator: this.handleReceiveOperator };
+    const operatorButtonProps = { className: "Button-operator", handleReceiveClick: this.handleReceiveClick };
 
     return (
       <div className="App">
@@ -73,7 +86,7 @@ handleReceiveOperator = (x) => {
             { buttonArray[1] }{ buttonArray[2] }{ buttonArray[3] }<Button {...operatorButtonProps} value="+"/>
           </div>
           <div className="button-row">
-            <Button value="C" handleReceiveInput={this.handleReceiveInput} className="Button-clear"/>{ buttonArray[0] }<Button {...operatorButtonProps} value="="/><Button {...operatorButtonProps} value="-"/>
+            <Button value="C" handleReceiveClick={this.handleReceiveClick} className="Button-clear"/>{ buttonArray[0] }<Button {...operatorButtonProps} value="="/><Button {...operatorButtonProps} value="-"/>
           </div>
         </div>
       </div>
